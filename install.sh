@@ -2,13 +2,23 @@
 
 pwd=`pwd`
 
-for i in `find ${pwd} -mindepth 1 | grep -v .git | grep -v "install.sh"`; do
-  file=`basename ${i}`
+dotfiles='
+.bash_aliases
+.bashrc
+.vimrc
+.vim
+'
+dirs='
+gnome-terminal-colors-solarized
+'
+
+for file in ${dotfiles}; do
   if [ -f ${HOME}/${file} ]; then
     mv ${HOME}/${file} ${HOME}/${file}.orig
   fi
-  
-  ln -sf ${i} ${HOME}
+  ln -sf ${pwd}/${file} ${HOME}
 done
 
-
+for dir in ${dirs}; do
+  ln -sf ${pwd}/${dir} /opt/
+done
