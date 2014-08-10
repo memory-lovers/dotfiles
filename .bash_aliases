@@ -33,3 +33,10 @@ alias vv='vim ~/.vimrc'
 ## solarized
 alias sdark='set_dark.sh'
 alias slight='set_light.sh'
+
+## git
+alias gci='git commit'
+alias gpu='git push'
+alias gst='git status'
+alias gdi='git diff'
+alias gpl='git pull'
