@@ -4,8 +4,9 @@ SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P)
 dotfiles='
 .bash_aliases
 .bashrc
-.vimrc
+.screenrc
 .vim
+.vimrc
 '
 dirs='
 gnome-terminal-colors-solarized
