@@ -1,0 +1,10 @@
+startup_message off
+
+shelltitle "$ |bash"
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..W} %H %{..W} %Y/%m/%d %c "
+hardstatus off
+vbell off
+defencodig utf-8
+escape ^Jj
+defscrollback 20000
+altscreen on
