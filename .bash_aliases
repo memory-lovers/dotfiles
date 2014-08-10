@@ -35,8 +35,8 @@ alias sdark='set_dark.sh'
 alias slight='set_light.sh'
 
 ## git
-alias g-ci='git commit'
-alias g-pu='git push'
-alias g-st='git status'
-alias g-di='git diff'
-alias g-pl='git pull'
+alias git-ci='git commit'
+alias git-pu='git push'
+alias git-st='git status'
+alias git-di='git diff'
+alias git-pl='git pull'
