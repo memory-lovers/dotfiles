@@ -41,3 +41,11 @@ alias git-pu='git push'
 alias git-st='git status'
 alias git-di='git diff'
 alias git-pl='git pull'
+
+## vagrant
+alias vd='vagrant destroy'
+alias vu='vagrant up'
+alias vh='vagrant halt'
+alias vs='vagrant ssh-config'
+
+alias vr="set -ex && vagrant destroy && echo '' > ~/.ssh/known_hosts && vagrant up && set +ex"
