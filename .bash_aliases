@@ -6,6 +6,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias xopen='xdg-open'
 
 ## android
 alias abc='adb -s 358674049513815 backup -apk -shered -f jp.choikake_`date +"%Y%m%d_%H%M%S"`.bk jp.choikake'
