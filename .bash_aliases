@@ -47,4 +47,4 @@ alias vu='vagrant up'
 alias vh='vagrant halt'
 alias vs='vagrant ssh-config'
 
-alias vr="set -ex && vagrant destroy && echo '' > ~/.ssh/known_hosts && vagrant up && set +ex"
+alias vr="set -ex | vagrant destroy && rm -rf ~/.ssh/known_hosts && vagrant up | set +ex"
