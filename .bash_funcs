@@ -1,0 +1,9 @@
+## Heroku Func
+heroku-destroy () {
+if [ $# -ne 1 ]; then
+  echo "Usage:: heroku-destroy <heroku-app-name>"
+  exit 1
+fi
+
+heroku apps:destroy --app $1 --confirm $1
+}

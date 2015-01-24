@@ -6,13 +6,40 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+## my alias command
 alias xopen='xdg-open'
+alias excel='libreoffice'
+alias less='/usr/share/vim/vim74/macros/less.sh'
 
 ## android
-alias abc='adb -s 358674049513815 backup -apk -shered -f jp.choikake_`date +"%Y%m%d_%H%M%S"`.bk jp.choikake'
-alias abs='adb -s 358674049513815 backup -apk -shered -f jp.memorylovers.shytter_`date +"%Y%m%d_%H%M%S"`.bk jp.memorylovers.shytter'
-alias auc='adb -s 358674049513815 uninstall jp.choikake'
-alias aus='adb -s 358674049513815 uninstall jp.memorylovers.shytter'
+#DEV_ID='358663048294709'
+#ASUS MemoPad
+#DEV_ID='E9OKCY036916'
+## SHARP AQUOS PHONE SH-02E
+DEV_ID='358674049513815'
+
+## for jp.choikake
+choikake='jp.choikake'
+alias abc="adb -s ${DEV_ID} backup -apk -shered -f ${choikake}_`date +'%Y%m%d_%H%M%S'`.bk ${choikake}"
+alias auc="adb -s ${DEV_ID} uninstall ${choikake}.debug"
+alias auc-publish="adb -s ${DEV_ID} uninstall ${choikake}"
+
+## for shytter
+shytter='jp.memorylovers.shytter'
+alias abs="adb -s ${DEV_ID} backup -apk -shered -f ${shytter}_`date +'%Y%m%d_%H%M%S'`.bk ${shytter}"
+alias aus="adb -s ${DEV_ID} uninstall ${shytter}"
+
+## for release_now
+release_now='jp.memorylovers.release_now'
+alias abr="adb -s ${DEV_ID} backup -apk -shered -f ${release_now}_`date +'%Y%m%d_%H%M%S'`.bk ${release_now}"
+alias aur="adb -s ${DEV_ID} uninstall ${release_now}.debug"
+alias aur-publish="adb -s ${DEV_ID} uninstall ${release_now}"
+
+## for babytuba
+babytuba='jp.memorylovers.babytuba'
+alias abb="adb -s ${DEV_ID} backup -apk -shered -f ${babytuba}_`date +'%Y%m%d_%H%M%S'`.bk ${babytuba}"
+alias aub="adb -s ${DEV_ID} uninstall ${babytuba}"
 
 ar () {
 if [ $# -ne 1 ]; then
@@ -20,7 +47,7 @@ if [ $# -ne 1 ]; then
 elif [ ! -e $1 ]; then
   echo "$1 dose not exist."
 else
-  adb -s 358674049513815 restore $1
+  adb -s ${DEV_ID} restore $1
 fi
 }
 
@@ -34,13 +61,6 @@ alias vv='vim ~/.vimrc'
 ## solarized
 alias sdark='set_dark.sh'
 alias slight='set_light.sh'
-
-## git
-alias git-ci='git commit'
-alias git-pu='git push'
-alias git-st='git status'
-alias git-di='git diff'
-alias git-pl='git pull'
 
 ## vagrant
 alias vd='vagrant destroy'

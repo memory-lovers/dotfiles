@@ -3,6 +3,7 @@
 SCRIPT_DIR=$(cd $(dirname $(readlink -f $0 || echo $0));pwd -P) 
 dotfiles='
 .bash_aliases
+.bash_funcs
 .bashrc
 .screenrc
 .vim
