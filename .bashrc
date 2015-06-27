@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 # export
-export PATH=/opt/gnome-terminal-colors-solarized/:$PATH
+export PATH=${HOME}/dotfiles/gnome-terminal-colors-solarized/:$PATH
 
 
 # solarized
