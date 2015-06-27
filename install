@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DOTFILES=~/.dotfiles; export DOTFILES
+GITHUB_DOTFILES="https://github.com/memory-lovers/dotfiles.git"; export GITHUB_DOTFILES
+
+download() {
+  echo "#### download dotfiles"
+  test -e ${DOTFILES} || mkdir ${DOTFILES}
+  git clone ${GITHUB_DOTFILES} ${DOTFILES}
+}
+
+install() {
+  echo "#### install dotfiles"
+  cd ${DOTFILES}
+  make install
+}
+
+main() {
+  download &&
+  install
+}
+
+main
