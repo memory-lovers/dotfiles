@@ -10,7 +10,6 @@ alias l='ls -CF'
 ## my alias command
 alias xopen='xdg-open'
 alias excel='libreoffice'
-alias less='/usr/share/vim/vim74/macros/less.sh'
 
 ## android
 #DEV_ID='358663048294709'
