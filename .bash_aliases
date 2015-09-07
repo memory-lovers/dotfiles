@@ -12,6 +12,8 @@ alias xopen='xdg-open'
 alias excel='libreoffice'
 
 ## android
+alias adb-restart="sudo /home/fujiuray/Android/Sdk/platform-tools/adb kill-server && sudo /home/fujiuray/Android/Sdk/platform-tools/adb start-server"
+
 #DEV_ID='358663048294709'
 #ASUS MemoPad
 #DEV_ID='E9OKCY036916'
@@ -25,7 +27,7 @@ alias auc="adb -s ${DEV_ID} uninstall ${choikake}.debug"
 alias auc-publish="adb -s ${DEV_ID} uninstall ${choikake}"
 
 ## for shytter
-shytter='jp.memorylovers.shytter'
+shytter='jp.memorylovers.shytter.debug'
 alias abs="adb -s ${DEV_ID} backup -apk -shered -f ${shytter}_`date +'%Y%m%d_%H%M%S'`.bk ${shytter}"
 alias aus="adb -s ${DEV_ID} uninstall ${shytter}"
 
@@ -68,3 +70,6 @@ alias vh='vagrant halt'
 alias vs='vagrant ssh-config'
 
 alias vr="set -ex | vagrant destroy && rm -rf ~/.ssh/known_hosts && vagrant up | set +ex"
+
+## wine
+alias line='wine .wine/drive_c/Program\ Files\ \(x86\)/LINE/LINE.exe'
