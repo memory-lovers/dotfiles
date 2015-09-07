@@ -119,6 +119,8 @@ fi
 
 # export
 export PATH=${HOME}/dotfiles/gnome-terminal-colors-solarized/:$PATH
+export PATH=${HOME}/Android/Sdk/tools:$PATH
+export PATH=${HOME}/Android/Sdk/platform-tools/:$PATH
 
 
 # solarized
