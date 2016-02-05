@@ -8,7 +8,7 @@ cifs-utils
 compizconfig-settings-manager
 git
 git-flow
-ibus-mozcsudo
+ibus-mozc
 language-pack-ja
 language-pack-ja-base
 openssh-server

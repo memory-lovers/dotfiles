@@ -1,9 +1,26 @@
 ## Heroku Func
 heroku-destroy () {
 if [ $# -ne 1 ]; then
-  echo "Usage:: heroku-destroy <heroku-app-name>"
+  echo "usage:: heroku-destroy <heroku-app-name>"
   exit 1
 fi
 
 heroku apps:destroy --app $1 --confirm $1
+}
+
+## ADB SQL Func
+adb-dbbrowse () {
+  if [ $# -ne 1 ]; then
+    echo "usage:: adb-dbbrowse <app-package-name>"
+  else
+    # setup parameter
+    PACKAGE_NAME="$1"
+    DBFILE_NAME="${PACKAGE_NAME}.db"
+    OUFILE_NAME="${PACKAGE_NAME}_`date +'%Y%m%d_%H%M%S'`.db"
+    TEMPFILE_PATH='/sdcard/db'
+    # main
+    adb -d shell "run-as ${PACKAGE_NAME} cat databases/${DBFILE_NAME} > ${TEMPFILE_PATH}" && \
+    adb pull ${TEMPFILE_PATH} /tmp/${OUFILE_NAME} && \
+    sqlitebrowser /tmp/${OUFILE_NAME}
+  fi
 }

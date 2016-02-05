@@ -12,13 +12,23 @@ alias xopen='xdg-open'
 alias excel='libreoffice'
 
 ## android
-alias adb-restart="sudo /home/fujiuray/Android/Sdk/platform-tools/adb kill-server && sudo /home/fujiuray/Android/Sdk/platform-tools/adb start-server"
+alias pidcat='pidcat.py'
+alias adb='adbp'
+ADB_BIN="${ANDROID_HOME}/platform-tools/adb"
+ADBP_BIN="/home/fujiuray/.go/adb-peco/bin/adbp"
+alias adb-restart="sudo ${ADB_BIN} kill-server && sudo ${ADB_BIN} start-server"
+alias adb-list="adb shell pm list package | sed -e s/package:// | peco"
 
-#DEV_ID='358663048294709'
-#ASUS MemoPad
+alias uninstallapp='adbp shell pm list package | sed -e s/package:// | peco | xargs adbp uninstall'
+alias installapp='find -name "*.apk" | peco | xargs adb install -r'
+alias backupapp="adbp shell pm list package | sed -e s/package:// | peco | xargs -I{} adbp backup -apk -shered -f {}_`date +'%Y%m%d_%H%M%S'`.bk {}"
+
+## ASUS MemoPad
 #DEV_ID='E9OKCY036916'
 ## SHARP AQUOS PHONE SH-02E
 DEV_ID='358674049513815'
+## NEXUS7
+#DEV_ID='0a8322f1'
 
 ## for jp.choikake
 choikake='jp.choikake'
@@ -38,8 +48,8 @@ alias aur="adb -s ${DEV_ID} uninstall ${release_now}.debug"
 alias aur-publish="adb -s ${DEV_ID} uninstall ${release_now}"
 
 ## for babytuba
-babytuba='jp.memorylovers.babytuba'
-alias abb="adb -s ${DEV_ID} backup -apk -shered -f ${babytuba}_`date +'%Y%m%d_%H%M%S'`.bk ${babytuba}"
+babytuba='jp.memorylovers.babytuba.debug'
+alias abb="adb -s ${DEV_ID} backup -apk -shared -f ${babytuba}_`date +'%Y%m%d_%H%M%S'`.bk ${babytuba}"
 alias aub="adb -s ${DEV_ID} uninstall ${babytuba}"
 
 ar () {
@@ -73,3 +83,4 @@ alias vr="set -ex | vagrant destroy && rm -rf ~/.ssh/known_hosts && vagrant up |
 
 ## wine
 alias line='wine .wine/drive_c/Program\ Files\ \(x86\)/LINE/LINE.exe'
+alias kobito='electron /opt/kobito/resources/app/ > /dev/null 2>&1 &'

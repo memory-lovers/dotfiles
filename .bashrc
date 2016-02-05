@@ -117,6 +117,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source ${HOME}/.gradle-tab-completion.bash
+
 # export
 export PATH=${HOME}/dotfiles/gnome-terminal-colors-solarized/:$PATH
 export PATH=${HOME}/Android/Sdk/tools:$PATH
@@ -137,3 +139,9 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Golang
+export GOPATH="${HOME}/.go"
+export PATH="${GOPATH}/bin:${GOPATH}/adb-peco/bin:$PATH"
+export PATH="/opt/pidcat:$PATH"
+
