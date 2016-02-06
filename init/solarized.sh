@@ -1,7 +1,14 @@
 #!/bin/bash
 
+OS=`uname -o`
+
+if [ ${OS} == 'Cygwin' ]; then
+  SOLARIZED_URL='https://github.com/mavnn/mintty-colors-solarized.git'
+else
+  SOLARIZED_URL='https://github.com/Anthony25/gnome-terminal-colors-solarized.git'
+fi
+
 SOLARIZED_DIR='gnome-terminal-colors-solarized'
-SOLARIZED_URL='https://github.com/Anthony25/gnome-terminal-colors-solarized.git'
 SOLARIZED_PATH="${DOTPATH}/${SOLARIZED_DIR}"
 
 echo "*** EXECUTE $0"
