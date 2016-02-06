@@ -23,7 +23,9 @@ xclip
 '
 
 # install packages
-#sudo apt-get install -y ${pkgs}
+if [ `uname -o` != 'Cygwin' ]; then
+  sudo apt-get install -y ${pkgs}
+fi
 
 # setup
 for i in $FILES; do
