@@ -23,7 +23,7 @@ xclip
 '
 
 # install packages
-sudo apt-get install -y ${pkgs}
+#sudo apt-get install -y ${pkgs}
 
 # setup
 for i in $FILES; do

@@ -1,0 +1,4 @@
+# solarized
+if [ -d ${HOME}/dotfiles/gnome-terminal-colors-solarized ]; then
+  source ${HOME}/dotfiles/gnome-terminal-colors-solarized/sol.dark
+fi
