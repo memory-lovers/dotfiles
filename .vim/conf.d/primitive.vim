@@ -21,15 +21,16 @@ set matchtime=2               " 対応する括弧の表示時間を2にする
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
-set noautoindent              " オートインデントを無効にする
 set expandtab                 " タブの代わりに空白を使う
 set hidden                    " バッファを切替えてもundoの効力を失わない
 set ambiwidth=double          " □とか○の文字があってもカーソル位置がずれないようにする
 set formatoptions+=mM         "整形オプションにマルチバイト系を追加
+set tabstop=2
+set shiftwidth=2
 
 syntax enable                 " シンタックスハイライトを有効にする
 syntax on                     " シンタックスハイライトを有効にする
-filetype indent on            " ファイルタイプによるインデントを行う
+"filetype indent on            " ファイルタイプによるインデントを行う
 filetype plugin on            " ファイルタイプによるプラグインを使う
 
 highlight clear CursorLine
@@ -45,9 +46,9 @@ cnoremap rr source ~/.vimrc
 "}}}
 
 "{{{ vimproc
-Bundle "Shougo/vimproc"
-Bundle "Shougo/vimshell.vim"
-Bundle "Shougo/unite.vim"
+"Bundle "Shougo/vimproc"
+"Bundle "Shougo/vimshell.vim"
+"Bundle "Shougo/unite.vim"
 "}}}
 
 
@@ -68,10 +69,12 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 au QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 "" filetype
-au BufNewFile,BufRead *.html set expandtab tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.css set expandtab tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.scss set expandtab tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.js set expandtab tabstop=4 shiftwidth=4
+augroup filetypedetect
+  au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.css  setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.scss setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.js   setlocal tabstop=2 shiftwidth=2
+augroup END
 
 " マッピングに関するMEMO
 " noreがつくものとつかないものの違い（mapとnoremapとか）
