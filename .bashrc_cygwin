@@ -1,4 +1,13 @@
 # solarized
-if [ -d ${HOME}/dotfiles/gnome-terminal-colors-solarized ]; then
-  source ${HOME}/dotfiles/gnome-terminal-colors-solarized/sol.dark
+echo '#ENTER .bashrc_cygwin'
+
+if [ $TERM != "screen" ]; then
+  if [ -d ${HOME}/dotfiles/gnome-terminal-colors-solarized ]; then
+    echo '##START  LOAD gnome-terminal-colors-solarized/sol.dark'
+    source ${HOME}/dotfiles/gnome-terminal-colors-solarized/sol.dark
+    echo '##FINISH LOAD gnome-terminal-colors-solarized/sol.dark'
+  fi
 fi
+
+
+echo '#DONE .bashrc_cygwin'

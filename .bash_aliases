@@ -13,7 +13,7 @@ alias excel='libreoffice'
 
 ## android
 alias pidcat='pidcat.py'
-alias adb='adbp'
+#alias adb='adbp'
 ADB_BIN="${ANDROID_HOME}/platform-tools/adb"
 ADBP_BIN="/home/fujiuray/.go/adb-peco/bin/adbp"
 alias adb-restart="sudo ${ADB_BIN} kill-server && sudo ${ADB_BIN} start-server"
@@ -69,6 +69,10 @@ alias rr='source ~/.bashrc'
 alias vr='vim ~/.bashrc'
 alias vv='vim ~/.vimrc'
 
+## cds
+alias cdwa='cd /cygdrive/c/AndroidStudioProjects'
+alias cdwe='cd /cygdrive/c/_workspaces/workspace_mars'
+
 ## solarized
 alias sdark='set_dark.sh'
 alias slight='set_light.sh'
@@ -84,3 +88,7 @@ alias vr="set -ex | vagrant destroy && rm -rf ~/.ssh/known_hosts && vagrant up |
 ## wine
 alias line='wine .wine/drive_c/Program\ Files\ \(x86\)/LINE/LINE.exe'
 alias kobito='electron /opt/kobito/resources/app/ > /dev/null 2>&1 &'
+
+## X Window System for Cygwin
+alias runx='run xwin -multiwindow -noclipboard'
+alias sshx='DISPLAY=:0.0 ssh -X '
