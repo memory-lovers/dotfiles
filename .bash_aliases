@@ -15,7 +15,7 @@ alias excel='libreoffice'
 alias pidcat='pidcat.py'
 #alias adb='adbp'
 ADB_BIN="${ANDROID_HOME}/platform-tools/adb"
-ADBP_BIN="/home/fujiuray/.go/adb-peco/bin/adbp"
+ADBP_BIN="${HOME}/.go/adb-peco/bin/adbp"
 alias adb-restart="sudo ${ADB_BIN} kill-server && sudo ${ADB_BIN} start-server"
 alias adb-list="adb shell pm list package | sed -e s/package:// | peco"
 
