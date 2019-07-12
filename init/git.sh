@@ -2,10 +2,6 @@
 
 echo "*** EXECUTE $0"
 
-# for account
-git config --global user.email "memory.loverz@gmail.com"
-git config --global user.name "@`hostname`"
-
 # for editor
 git config --global core.editor vim
 # for color
